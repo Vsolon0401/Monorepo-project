@@ -6,11 +6,12 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
@@ -22,6 +23,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "cz-lerna-changelog": "^2.0.3",
     "husky": "^8.0.3",
     "lerna": "^6.5.1",
